@@ -2,6 +2,8 @@
 
 {% block content %}
     <h1>Home page2</h1>
-    {{ name }}
+{% if user.is_authenticated %}
+    {{ request.user }}
+{% endif %}
 
 {% endblock %}

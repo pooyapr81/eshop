@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import AccountAuthenticationForm, RegistrationForm
 from django.contrib.auth import authenticate, login, logout
+from .models import Account
 
 
 def home(request):
@@ -63,3 +64,15 @@ def register_view(request, *args, **kwargs):
 def logout_view(request):
     logout(request)
     return redirect('accounts:home')
+
+
+def profile_view(request, *args, **kwargs):
+    contex = {}
+    user_id = kwargs.get('user_id')
+    try:
+        account = Account.objects.get(pk=user_id)
+    except:
+        return HttpResponse("somthing went wrong")
+    contex['user'] = account
+    print('account', account)
+    return render(request, 'account/profile.html', contex)

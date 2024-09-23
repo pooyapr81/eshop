@@ -19,7 +19,7 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 from azbankgateways.urls import az_bank_gateways_urls
-from src.product.bank import go_to_gateway_view, callback_gateway_view
+from product.bank import go_to_gateway_view, callback_gateway_view
 
 
 urlpatterns = [

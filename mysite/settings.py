@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 
+MERCHANT_CODE = ''
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -149,7 +151,7 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880
 AZ_IRANIAN_BANK_GATEWAYS = {
    'GATEWAYS': {
        'ZARINPAL': {
-           'MERCHANT_CODE': 'MERCHANT_CODE',
+           'MERCHANT_CODE': MERCHANT_CODE,
            'SANDBOX': 1,  # 0 disable, 1 active
        },
    },

@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Home page2</h1>
+    <h1>Home page</h1>
 {% if user.is_authenticated %}
-    {{ request.user }}
+  <h5> WELCOME {{ request.user }}  </h5>
 {% endif %}
 
 {% endblock %}
